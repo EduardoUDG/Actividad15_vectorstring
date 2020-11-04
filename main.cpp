@@ -7,7 +7,7 @@
 using namespace std;
 
 int main(){
-    vector<int> enteros;
+    vector<string> enteros;
 
     string op;
 
@@ -27,16 +27,16 @@ int main(){
         getline(cin, op);
 
         if (op == "1"){
-            int entero;
+            string entero;
 
-            cout << "Entero: ";
+            cout << "String: ";
             cin >> entero; cin.ignore();
 
             enteros.push_back(entero);
         }
         else if (op == "2"){
             for (size_t i = 0; i < enteros.size(); i++){
-                cout << enteros[i] << " , ";
+                cout << enteros[i] << " | ";
             }
             cout << endl;
             system("pause");
@@ -44,14 +44,14 @@ int main(){
         }
         else if (op == "3"){
             size_t n;
-            int entero;
+            string entero;
 
             cout << "Tam: ";
             cin >> n;
             cout << "Enetero: ";
             cin >> entero; cin.ignore();
 
-            enteros = vector<int>(n,entero);
+            enteros = vector<string>(n,entero);
         }
         else if (op == "4"){
             if (enteros.empty())
@@ -78,11 +78,11 @@ int main(){
 
             // De esta forma definimos como ordenar el arreglo ↓
             // Ordena de mayor a menor
-            sort(enteros.begin(), enteros.end(), greater<int>());
+            sort(enteros.begin(), enteros.end(), greater<string>());
         }
         else if (op == "7"){
             size_t p;
-            int entero;
+            string entero;
 
             cout << "Posicion: ";
             cin >> p;
