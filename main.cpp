@@ -24,6 +24,8 @@ int main(){
         cout << "8) Eliminar" << endl;
         cout << "9) Eliminar ultimo" << endl;
         cout << "0) Salir" << endl;
+
+        cout << "Selecciona una opcion: " << endl;
         getline(cin, op);
 
         if (op == "1"){
@@ -48,7 +50,7 @@ int main(){
 
             cout << "Tam: ";
             cin >> n;
-            cout << "Enetero: ";
+            cout << "String: ";
             cin >> entero; cin.ignore();
 
             enteros = vector<string>(n,entero);
@@ -61,6 +63,8 @@ int main(){
             else {
                 cout << enteros.front() << endl;
             }
+            cout << endl;
+            system("pause");
             
         }
         else if (op == "5"){
@@ -71,14 +75,16 @@ int main(){
             else {
                 cout << enteros.back() << endl;
             }
+            cout << endl;
+            system("pause");
         }
         else if (op == "6"){
             // esta opcion ↓ ordena de menor a mayor
-            // sort(enteros.begin(), enteros.end());
+            sort(enteros.begin(), enteros.end());
 
             // De esta forma definimos como ordenar el arreglo ↓
             // Ordena de mayor a menor
-            sort(enteros.begin(), enteros.end(), greater<string>());
+            // sort(enteros.begin(), enteros.end(), greater<string>());
         }
         else if (op == "7"){
             size_t p;
@@ -86,7 +92,7 @@ int main(){
 
             cout << "Posicion: ";
             cin >> p;
-            cout << "Entero: ";
+            cout << "String: ";
             cin >> entero; cin.ignore();
 
             if (p >= enteros.size()){
