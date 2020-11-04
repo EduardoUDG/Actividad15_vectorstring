@@ -13,13 +13,16 @@ int main(){
 
     while (true)
     {
-
+        system("cls");
         cout << "1) Agrega al final" << endl;
         cout << "2) Mostrar" << endl;
         cout << "3) Inicializar" << endl;
         cout << "4) Frente" << endl;
         cout << "5) Ultimo" << endl;
         cout << "6) Ordenar" << endl;
+        cout << "7) Insertar" << endl;
+        cout << "8) Eliminar" << endl;
+        cout << "9) Eliminar ultimo" << endl;
         cout << "0) Salir" << endl;
         getline(cin, op);
 
@@ -36,6 +39,8 @@ int main(){
                 cout << enteros[i] << " , ";
             }
             cout << endl;
+            system("pause");
+
         }
         else if (op == "3"){
             size_t n;
@@ -74,16 +79,48 @@ int main(){
             // De esta forma definimos como ordenar el arreglo ↓
             // Ordena de mayor a menor
             sort(enteros.begin(), enteros.end(), greater<int>());
-
         }
-        
-        
-        
+        else if (op == "7"){
+            size_t p;
+            int entero;
+
+            cout << "Posicion: ";
+            cin >> p;
+            cout << "Entero: ";
+            cin >> entero; cin.ignore();
+
+            if (p >= enteros.size()){
+                cout << "Posicion no valida" << endl;
+            }
+            else {
+                enteros.insert(enteros.begin()+p, entero);
+            }
+        }
+        else if (op == "8"){
+            size_t p;
+
+            cout << "Poscion: ";
+            cin >> p; cin.ignore();
+
+            if (p >= enteros.size()){
+                cout << "Posicion no valida" << endl;
+            }
+            else {
+                enteros.erase(enteros.begin()+p);
+            }
+        }
+        else if (op == "9"){
+            if (enteros.empty()){
+                cout << "Vector esta vacio" << endl;
+            }
+            else {
+                enteros.pop_back();
+            }
+            
+        }
         else if (op == "0"){
             break;
         }
-        
-        
     }
     
 
